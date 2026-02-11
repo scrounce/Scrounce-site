@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODERN FLOWR | SROUNCE</title>
+    <style>
+        :root {
+            --bg-color: #f4f1ea; /* Muted, organic paper tone */
+            --text-color: #1a1a1a;
+            --accent-color: #5b6e58; /* Muted leaf green */
+            --price-tag: #8b5e3c;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header / Artist Signature */
+        header {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 0.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .signature {
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        /* Main Product Section */
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 90vh;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* The Animation/Visual Side */
+        .product-visual {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* The Purchase/Details Side */
+        .product-info {
+            padding: 5rem 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--price-tag);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .description {
+            max-width: 500px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .details-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 3rem;
+        }
+
+        .details-list li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: #666;
+        }
+
+        /* Action Button */
+        .buy-button {
+            background-color: var(--text-color);
+            color: white;
+            padding: 1.2rem 4rem;
+            border: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .buy-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            main { grid-template-columns: 1fr; }
+            .product-visual { height: auto; position: relative; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SROUNCE</div>
+        <div class="signature">By H Lewis</div>
+    </header>
+
+    <main>
+        <section class="product-visual">
+            <div class="video-placeholder">
+                <video autoplay loop muted playsinline width="100%">
+                    <source src="modern_flowr_promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section class="product-info">
+            <h1>modern flowr</h1>
+            <span class="price">$45.00</span>
+
+            <p class="description">
+                A technical exploration of movement and surreal flora. 
+                Each piece features the "modern flowr" character in motion, 
+                blending the grit of skate culture with the softness of 
+                surrealist digital art.
+            </p>
+
+            <ul class="details-list">
+                <li>Comfort Colors 1717 Garment-Dyed Tee</li>
+                <li>Heavyweight 6.1 oz. 100% Ring Spun Cotton</li>
+                <li>High-Fidelity Screen Print</li>
+                <li>Art by H Lewis</li>
+            </ul>
+
+            <button class="buy-button">Add to Collection</button>
+            
+            <div style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
+                Ships worldwide. Tracked and insured.
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
