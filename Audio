@@ -1,0 +1,7 @@
+<div class="audio-integration" style="margin-top: 3rem; padding: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 0;">Now Playing: UNSEEN HEROES EP</p>
+    <audio controls style="width: 100%;">
+        <source src="track-from-ep.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
