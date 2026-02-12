@@ -18,7 +18,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
@@ -26,19 +26,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .logo {
-            font-size: 1.2rem;
-            letter-spacing: 0.3rem;
-            font-weight: bold;
+            font-size: 1.4rem;
+            letter-spacing: 0.4rem;
+            font-weight: 800;
             text-transform: uppercase;
         }
 
         .signature {
             font-style: italic;
-            opacity: 0.7;
+            opacity: 0.6;
+            font-size: 0.9rem;
         }
 
         main {
@@ -50,7 +51,6 @@
         }
 
         .product-visual {
-            background: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -60,75 +60,100 @@
             height: 100vh;
         }
 
-        .video-container {
+        .video-wrapper {
             width: 100%;
-            max-width: 500px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            max-width: 450px;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.12));
+            border-radius: 12px;
             overflow: hidden;
+            background: #fff;
         }
 
         .product-info {
-            padding: 5rem 3rem;
+            padding: 8rem 4rem;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
             font-weight: 300;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
             text-transform: lowercase;
         }
 
         .price {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--price-tag);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             display: block;
+            font-weight: 500;
         }
 
         .description {
-            max-width: 500px;
+            max-width: 480px;
             margin-bottom: 3rem;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: #444;
+            line-height: 1.8;
         }
 
         .details-list {
             list-style: none;
             padding: 0;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .details-list li {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            color: #666;
+            letter-spacing: 0.15rem;
+            color: #777;
+            display: flex;
+            align-items: center;
+        }
+
+        .details-list li::before {
+            content: "•";
+            margin-right: 10px;
+            color: var(--accent-color);
         }
 
         .buy-button {
             background-color: var(--text-color);
             color: white;
-            padding: 1.2rem 4rem;
+            padding: 1.4rem 4.5rem;
             border: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.3rem;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .buy-button:hover {
             background-color: var(--accent-color);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
-        @media (max-width: 900px) {
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            opacity: 0.4;
+        }
+
+        @media (max-width: 1024px) {
             main { grid-template-columns: 1fr; }
-            .product-visual { height: auto; position: relative; }
+            .product-visual { height: auto; position: relative; padding: 4rem 2rem; }
+            .product-info { padding: 2rem; text-align: center; }
+            .description { margin: 0 auto 3rem; }
+            .details-list { display: inline-block; text-align: left; }
         }
     </style>
 </head>
@@ -136,13 +161,13 @@
 
     <header>
         <div class="logo">SCROUNCE</div>
-        <div class="signature">By H Lewis</div>
+        <div class="signature">Digital Art & Apparel by H Lewis</div>
     </header>
 
     <main>
         <section class="product-visual">
-            <div class="video-container">
-                <video autoplay loop muted playsinline width="100%">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline poster="" width="100%">
                     <source src="1000008968.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -155,25 +180,30 @@
 
             <p class="description">
                 A technical exploration of movement and surreal flora. 
-                Blending the grit of skate culture with the softness of 
-                surrealist digital art, printed on premium heavyweight cotton.
+                Captured in motion, this piece bridges the gap between 
+                Waco's skate culture and surrealist digital expression.
             </p>
 
             <ul class="details-list">
-                <li>Comfort Colors 1717 Garment-Dyed Tee</li>
-                <li>Heavyweight 6.1 oz. 100% Ring Spun Cotton</li>
-                <li>High-Fidelity Screen Print</li>
-                <li>Limited Artist Edition</li>
+                <li>Comfort Colors 1717 Premium Blank</li>
+                <li>6.1 oz. 100% Ring Spun Cotton</li>
+                <li>Garment-dyed for vintage feel</li>
+                <li>Limited Edition "Scrounce" Print</li>
             </ul>
 
             <a href="#" class="buy-button">Secure the Drop</a>
             
-            <div style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
-                Ships from Texas. International shipping available.
+            <div style="margin-top: 5rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
+                SHIPS FROM TEXAS<br>
+                ESTIMATED ARRIVAL: 7-10 DAYS<br>
+                UNSEEN HEROES EP © 2026
             </div>
         </section>
     </main>
 
+    <footer>
+        SCROUNCE.COM — ALL RIGHTS RESERVED
+    </footer>
+
 </body>
 </html>
-
