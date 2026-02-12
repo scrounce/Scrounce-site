@@ -196,8 +196,20 @@
         <p style="font-size: 0.75rem; color: #777; margin-top: 0.5rem;">*Comfort Colors 1717 has a relaxed, vintage fit.</p>
     </div>
 
-    <a href="https://paypal.me/LilNiko1/45" class="buy-button" id="buy-link">
-        Secure the Drop
+    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2rem; width: 100%;">
+    
+    <div id="paypal-container-HNTHUGPSRVTAC" style="width: 100%; max-width: 300px;"></div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAUl0uEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+    
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "HNTHUGPSRVTAC",
+      }).render("#paypal-container-HNTHUGPSRVTAC")
+    </script>
+    </div>
+            
+        <a Secure the Drop
          </a>
 
 </section>
