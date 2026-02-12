@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MODERN FLOWR | SROUNCE</title>
+    <title>MODERN FLOWR | SCROUNCE</title>
     <style>
         :root {
-            --bg-color: #f4f1ea; /* Muted, organic paper tone */
+            --bg-color: #f4f1ea; 
             --text-color: #1a1a1a;
-            --accent-color: #5b6e58; /* Muted leaf green */
+            --accent-color: #5b6e58; 
             --price-tag: #8b5e3c;
         }
 
@@ -21,7 +21,6 @@
             line-height: 1.6;
         }
 
-        /* Header / Artist Signature */
         header {
             padding: 2rem;
             display: flex;
@@ -32,7 +31,7 @@
 
         .logo {
             font-size: 1.2rem;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.3rem;
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -42,7 +41,6 @@
             opacity: 0.7;
         }
 
-        /* Main Product Section */
         main {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -51,7 +49,6 @@
             margin: 0 auto;
         }
 
-        /* The Animation/Visual Side */
         .product-visual {
             background: #fff;
             display: flex;
@@ -63,7 +60,7 @@
             height: 100vh;
         }
 
-        .video-placeholder {
+        .video-container {
             width: 100%;
             max-width: 500px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
@@ -71,7 +68,6 @@
             overflow: hidden;
         }
 
-        /* The Purchase/Details Side */
         .product-info {
             padding: 5rem 3rem;
         }
@@ -81,6 +77,7 @@
             margin: 0;
             font-weight: 300;
             letter-spacing: -1px;
+            text-transform: lowercase;
         }
 
         .price {
@@ -110,7 +107,6 @@
             color: #666;
         }
 
-        /* Action Button */
         .buy-button {
             background-color: var(--text-color);
             color: white;
@@ -121,6 +117,8 @@
             letter-spacing: 0.2rem;
             cursor: pointer;
             transition: transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .buy-button:hover {
@@ -128,7 +126,6 @@
             transform: translateY(-2px);
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             main { grid-template-columns: 1fr; }
             .product-visual { height: auto; position: relative; }
@@ -138,15 +135,15 @@
 <body>
 
     <header>
-        <div class="logo">SROUNCE</div>
+        <div class="logo">SCROUNCE</div>
         <div class="signature">By H Lewis</div>
     </header>
 
     <main>
         <section class="product-visual">
-            <div class="video-placeholder">
+            <div class="video-container">
                 <video autoplay loop muted playsinline width="100%">
-                    <source src="modern_flowr_promo.mp4" type="video/mp4">
+                    <source src="1000008968.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -158,25 +155,25 @@
 
             <p class="description">
                 A technical exploration of movement and surreal flora. 
-                Each piece features the "modern flowr" character in motion, 
-                blending the grit of skate culture with the softness of 
-                surrealist digital art.
+                Blending the grit of skate culture with the softness of 
+                surrealist digital art, printed on premium heavyweight cotton.
             </p>
 
             <ul class="details-list">
                 <li>Comfort Colors 1717 Garment-Dyed Tee</li>
                 <li>Heavyweight 6.1 oz. 100% Ring Spun Cotton</li>
                 <li>High-Fidelity Screen Print</li>
-                <li>Art by H Lewis</li>
+                <li>Limited Artist Edition</li>
             </ul>
 
-            <button class="buy-button">Add to Collection</button>
+            <a href="#" class="buy-button">Secure the Drop</a>
             
             <div style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
-                Ships worldwide. Tracked and insured.
+                Ships from Texas. International shipping available.
             </div>
         </section>
     </main>
 
 </body>
 </html>
+
