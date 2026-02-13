@@ -119,12 +119,34 @@
             color: var(--accent-color);
         }
 
-        footer {
-            padding: 4rem 2rem;
-            text-align: center;
+        .paypal-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            background: #fff;
+            color: var(--text-color);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 1px;
-            opacity: 0.4;
+            color: var(--accent-color);
+            font-weight: bold;
         }
 
         @media (max-width: 1024px) {
@@ -133,7 +155,7 @@
             .product-info { padding: 2rem; text-align: center; }
             .description { margin: 0 auto 3rem; }
             .details-list { display: inline-block; text-align: left; }
-            .paypal-wrapper { align-items: center !important; }
+            .paypal-wrapper { align-items: center; margin: 0 auto; }
         }
     </style>
 </head>
@@ -169,66 +191,27 @@
                 <li>Ships from Waco, TX</li>
             </ul>
 
-             <div class="paypal-wrapper" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-    
-    <div style="margin-bottom: 25px; width: 100%; max-width: 320px; text-align: left;">
-        <label for="size-select" style="display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Size</label>
-        <select id="size-select" style="width: 100%; padding: 12px; background: #fff; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; margin-bottom: 20px; font-family: inherit;">
-            <option value="Small">Small - $45.00</option>
-            <option value="Medium">Medium - $45.00</option>
-            <option value="Large">Large - $45.00</option>
-            <option value="XL">XL - $45.00</option>
-            <option value="2XL">2XL - $45.00</option>
-            <option value="3XL">3XL - $45.00</option>
-        </select>
+            <div class="paypal-wrapper">
+                <label for="size-select">Size</label>
+                <select id="size-select">
+                    <option value="Small">Small - $45.00</option>
+                    <option value="Medium">Medium - $45.00</option>
+                    <option value="Large">Large - $45.00</option>
+                    <option value="XL">XL - $45.00</option>
+                    <option value="2XL">2XL - $45.00</option>
+                    <option value="3XL">3XL - $45.00</option>
+                </select>
 
-        <label for="color-select" style="display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Color</label>
-        <select id="color-select" style="width: 100%; padding: 12px; background: #fff; color: var(--text-color); border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; font-family: inherit;">
-            <option value="Black">Black</option>
-            <option value="White">White</option>
-            <option value="Ivory">Ivory</option>
-        </select>
-    </div>
+                <label for="color-select">Color</label>
+                <select id="color-select">
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Ivory">Ivory</option>
+                </select>
 
-    <div id="paypal-button-container" style="width: 100%; max-width: 320px; min-height: 150px;"></div>
+                <div id="paypal-button-container" style="width: 100%;"></div>
+            </div>
 
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAUIOuEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&currency=USD"></script>
-    
-    <script>
-        // Check if the SDK loaded before trying to render
-        if (window.paypal) {
-            paypal.Buttons({
-                style: {
-                    layout: 'vertical',
-                    color:  'black',
-                    shape:  'rect',
-                    label:  'pay'
-                },
-                createOrder: function(data, actions) {
-                    const s = document.getElementById("size-select").value;
-                    const c = document.getElementById("color-select").value;
-                    return actions.order.create({
-                        purchase_units: [{
-                            description: "Modern Flower Shirt - Size: " + s + ", Color: " + c,
-                            amount: { value: '45.00' }
-                        }]
-                    });
-                },
-                onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-                        window.location.href = "success.html";
-                    });
-                },
-                onError: function (err) {
-                    console.error('PayPal Error:', err);
-                }
-            }).render('#paypal-button-container');
-        } else {
-            console.error('PayPal SDK could not be reached.');
-        }
-    </script>
-</div>
-            
             <div style="margin-top: 5rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
                 SHIPS FROM TEXAS<br>
                 ORDERS SHIPPED EVERY 2 WEEKS<br>
@@ -239,19 +222,46 @@
     <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05);">
         <div style="margin-bottom: 2rem;">
             <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1.5rem; opacity: 0.6;">Connect with Scrounce</p>
-            
             <div class="social-links" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 2rem;">
                 <a href="https://www.instagram.com/scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">INSTAGRAM</a>
                 <a href="https://www.tiktok.com/@scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">TIKTOK</a>
                 <a href="mailto:info@scrounce.com" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">EMAIL</a>
             </div>
         </div>
-
         <div style="font-size: 0.7rem; letter-spacing: 1px; opacity: 0.4;">
             SCROUNCE.COM — WACO, TX<br>
             UNSEEN HEROES EP © 2026
         </div>
     </footer>
 
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAUIOuEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&currency=USD"></script>
+    <script>
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color:  'black',
+                shape:  'rect',
+                label:  'pay'
+            },
+            createOrder: function(data, actions) {
+                const s = document.getElementById("size-select").value;
+                const c = document.getElementById("color-select").value;
+                return actions.order.create({
+                    purchase_units: [{
+                        description: "Modern Flower Shirt - Size: " + s + ", Color: " + c,
+                        amount: {
+                            currency_code: 'USD',
+                            value: '45.00'
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    window.location.href = "success.html";
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
 </body>
 </html>
