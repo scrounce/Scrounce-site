@@ -99,4 +99,119 @@
 
         .details-list {
             list-style: none;
+            padding: 0;
+            margin-bottom: 4rem;
+        }
+
+        .details-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            color: #777;
+            display: flex;
+            align-items: center;
+        }
+
+        .details-list li::before {
+            content: "•";
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        /* Container for the PayPal button */
+        .paypal-container-wrapper {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem 0;
+            min-height: 200px; /* Prevents layout jump when button loads */
+        }
+
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            opacity: 0.4;
+        }
+
+        @media (max-width: 1024px) {
+            main { grid-template-columns: 1fr; }
+            .product-visual { height: auto; position: relative; padding: 4rem 2rem; }
+            .product-info { padding: 2rem; text-align: center; }
+            .description { margin: 0 auto 3rem; }
+            .details-list { display: inline-block; text-align: left; }
+            .paypal-container-wrapper { margin: 2rem auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SCROUNCE</div>
+        <div class="signature">Digital Art & Apparel by H Lewis</div>
+    </header>
+
+    <main>
+        <section class="product-visual">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline width="100%">
+                    <source src="Untitled_Artwork.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section class="product-info">
+            <h1>modern flower</h1>
+            <span class="price">$45.00</span>
+
+            <p class="description">
+                Limited Artist Drop. Premium Comfort Colors 1717 blanks. 
+                Original digital art by H Lewis.
+            </p>
+
+            <ul class="details-list">
+                <li>Garment Dyed Fabric</li>
+                <li>Relaxed, Vintage Fit</li>
+                <li>Ships from Waco, TX</li>
+            </ul>
+
+            <div class="paypal-container-wrapper">
+                <div id="paypal-container-BAAUIOuEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE"></div>
+                
+                <script src="https://www.paypal.com/sdk/js?client-id=BAAUIOuEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+                
+                <script>
+                  paypal.HostedButtons({
+                    hostedButtonId: "BAAUIOuEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE",
+                  }).render("#paypal-container-BAAUIOuEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE");
+                </script>
+            </div>
+
+            <div style="margin-top: 5rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
+                SHIPS FROM TEXAS<br>
+                ORDERS SHIPPED EVERY 2 WEEKS<br>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 2rem;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1.5rem; opacity: 0.6;">Connect with Scrounce</p>
             
+            <div class="social-links" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 2rem;">
+                <a href="https://www.instagram.com/scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">INSTAGRAM</a>
+                <a href="https://www.tiktok.com/@scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">TIKTOK</a>
+                <a href="mailto:info@scrounce.com" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">EMAIL</a>
+            </div>
+        </div>
+
+        <div style="font-size: 0.7rem; letter-spacing: 1px; opacity: 0.4;">
+            SCROUNCE.COM — WACO, TX<br>
+            UNSEEN HEROES EP © 2026
+        </div>
+    </footer>
+
+</body>
+</html>
