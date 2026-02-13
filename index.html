@@ -125,6 +125,7 @@
             align-items: flex-start;
             width: 100%;
             max-width: 320px;
+            margin-bottom: 3rem;
         }
 
         select {
@@ -211,8 +212,7 @@
 
                 <div id="paypal-button-container" style="width: 100%;"></div>
             </div>
-
-            <div style="margin-top: 5rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
+            <div style="margin-top: 2rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
                 SHIPS FROM TEXAS<br>
                 ORDERS SHIPPED EVERY 2 WEEKS<br>
             </div>
@@ -244,15 +244,12 @@
                 label:  'pay'
             },
             createOrder: function(data, actions) {
-                const s = document.getElementById("size-select").value;
-                const c = document.getElementById("color-select").value;
+                var s = document.getElementById("size-select").value;
+                var c = document.getElementById("color-select").value;
                 return actions.order.create({
                     purchase_units: [{
                         description: "Modern Flower Shirt - Size: " + s + ", Color: " + c,
-                        amount: {
-                            currency_code: 'USD',
-                            value: '45.00'
-                        }
+                        amount: { value: '45.00' }
                     }]
                 });
             },
