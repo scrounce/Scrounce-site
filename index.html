@@ -169,21 +169,59 @@
                 <li>Ships from Waco, TX</li>
             </ul>
 
-            <div class="paypal-wrapper" style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 2rem; width: 100%;">
-                <div id="paypal-container-HNTHUGPSRVTAC" style="width: 100%; max-width: 300px;"></div>
-                <script src="https://www.paypal.com/sdk/js?client-id=BAAUl0uEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-                <script>
-                  paypal.HostedButtons({
-                    hostedButtonId: "HNTHUGPSRVTAC",
-                  }).render("#paypal-container-HNTHUGPSRVTAC")
-                </script>
+            <div class="paypal-wrapper" style="display: flex; flex-direction: column; align-items: center;">
+    
+    <div style="margin-bottom: 20px; width: 100%; max-width: 300px; text-align: left;">
+        <label for="size-select" style="display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.8rem;">Size:</label>
+        <select id="size-select" style="width: 100%; padding: 10px; background: #1a1a1a; color: white; border: 1px solid #333; margin-bottom: 15px;">
+            <option value="Small">Small - $45.00</option>
+            <option value="Medium">Medium - $45.00</option>
+            <option value="Large">Large - $45.00</option>
+            <option value="XL">XL - $45.00</option>
+            <option value="2XL">2XL - $45.00</option>
+            <option value="3XL">3XL - $45.00</option>
+        </select>
+
+        <label for="color-select" style="display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.8rem;">Color:</label>
+        <select id="color-select" style="width: 100%; padding: 10px; background: #1a1a1a; color: white; border: 1px solid #333;">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Ivory">Ivory</option>
+        </select>
+    </div>
+
+    <div id="paypal-button-container" style="width: 100%; max-width: 300px;"></div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_LIVE_CLIENT_ID&currency=USD"></script>
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                const s = document.getElementById("size-select").value;
+                const c = document.getElementById("color-select").value;
+                return actions.order.create({
+                    purchase_units: [{
+                        description: "Modern Flower Shirt - Size: " + s + ", Color: " + c,
+                        amount: { value: '45.00' }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Order confirmed for ' + details.payer.name.given_name + '!');
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+            </div>
+            
             </div>
 
             <div style="margin-top: 5rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
                 SHIPS FROM TEXAS<br>
                 ORDERS SHIPPED EVERY 2 WEEKS<br>
             </div>
-        </section>
+       
+            </section>
     </main>
 
     <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05);">
