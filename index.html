@@ -119,27 +119,6 @@
             color: var(--accent-color);
         }
 
-        .buy-button {
-            background-color: var(--text-color);
-            color: white;
-            padding: 1.4rem 4.5rem;
-            border: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .buy-button:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
         footer {
             padding: 4rem 2rem;
             text-align: center;
@@ -154,6 +133,7 @@
             .product-info { padding: 2rem; text-align: center; }
             .description { margin: 0 auto 3rem; }
             .details-list { display: inline-block; text-align: left; }
+            .paypal-wrapper { align-items: center !important; }
         }
     </style>
 </head>
@@ -167,7 +147,7 @@
     <main>
         <section class="product-visual">
             <div class="video-wrapper">
-                <video autoplay loop muted playsinline poster="" width="100%">
+                <video autoplay loop muted playsinline width="100%">
                     <source src="Untitled_Artwork.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -175,45 +155,52 @@
         </section>
 
         <section class="product-info">
-    
-    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2rem; width: 100%;">
-    
-    <div id="paypal-container-HNTHUGPSRVTAC" style="width: 100%; max-width: 300px;"></div>
+            <h1>modern flower</h1>
+            <span class="price">$45.00</span>
 
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAUl0uEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-    
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "HNTHUGPSRVTAC",
-      }).render("#paypal-container-HNTHUGPSRVTAC")
-    </script>
-    </div>
+            <p class="description">
+                Limited Artist Drop. Premium Comfort Colors 1717 blanks. 
+                Original digital art by H Lewis.
+            </p>
 
-</section>
+            <ul class="details-list">
+                <li>Garment Dyed Fabric</li>
+                <li>Relaxed, Vintage Fit</li>
+                <li>Ships from Waco, TX</li>
+            </ul>
+
+            <div class="paypal-wrapper" style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 2rem; width: 100%;">
+                <div id="paypal-container-HNTHUGPSRVTAC" style="width: 100%; max-width: 300px;"></div>
+                <script src="https://www.paypal.com/sdk/js?client-id=BAAUl0uEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+                <script>
+                  paypal.HostedButtons({
+                    hostedButtonId: "HNTHUGPSRVTAC",
+                  }).render("#paypal-container-HNTHUGPSRVTAC")
+                </script>
+            </div>
 
             <div style="margin-top: 5rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
                 SHIPS FROM TEXAS<br>
                 ORDERS SHIPPED EVERY 2 WEEKS<br>
-                
             </div>
         </section>
     </main>
 
     <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05);">
-    <div style="margin-bottom: 2rem;">
-        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1.5rem; opacity: 0.6;">Connect with Scrounce</p>
-        
-        <div class="social-links" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 2rem;">
-            <a href="https://www.instagram.com/scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">INSTAGRAM</a>
-            <a href="https://www.tiktok.com/@scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">TIKTOK</a>
-            <a href="mailto:info@scrounce.com" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">EMAIL</a>
+        <div style="margin-bottom: 2rem;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1.5rem; opacity: 0.6;">Connect with Scrounce</p>
+            
+            <div class="social-links" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 2rem;">
+                <a href="https://www.instagram.com/scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">INSTAGRAM</a>
+                <a href="https://www.tiktok.com/@scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">TIKTOK</a>
+                <a href="mailto:info@scrounce.com" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">EMAIL</a>
+            </div>
         </div>
-    </div>
 
-    <div style="font-size: 0.7rem; letter-spacing: 1px; opacity: 0.4;">
-        SCROUNCE.COM — WACO, TX<br>
-        
-    </div>
+        <div style="font-size: 0.7rem; letter-spacing: 1px; opacity: 0.4;">
+            SCROUNCE.COM — WACO, TX<br>
+            UNSEEN HEROES EP © 2026
+        </div>
     </footer>
 
 </body>
