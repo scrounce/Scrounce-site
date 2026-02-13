@@ -206,8 +206,12 @@
                 });
             },
             onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Order confirmed for ' + details.payer.name.given_name + '!');
+    return actions.order.capture().then(function(details) {
+        // This line redirects the user to your success page
+        window.location.href = "success.html";
+    });
+}
+;
                 });
             }
         }).render('#paypal-button-container');
