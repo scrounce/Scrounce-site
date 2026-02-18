@@ -31,5 +31,169 @@
         }
 
         .logo {
-            font-size:
-                
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            /* The Centering Fix */
+            letter-spacing: 0.4rem;
+            text-indent: 0.4rem; 
+            text-align: center;
+        }
+
+        .signature {
+            font-style: italic;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Hero / Gallery Section */
+        .hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .item-label {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+
+        .btn-container {
+            margin-bottom: 8rem;
+            text-align: center;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--text-color);
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: opacity 0.3s;
+        }
+
+        .btn-main:hover {
+            opacity: 0.8;
+        }
+
+        /* Responsive Mobile Tweak */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .logo {
+                letter-spacing: 0.3rem;
+                text-indent: 0.3rem;
+                font-size: 1.2rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SCROUNCE</div>
+        <div class="signature">Digital Art & Apparel by H Lewis</div>
+    </header>
+
+    <section class="hero">
+        <h1>digital gallery</h1>
+        <p style="opacity: 0.6; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
+            Exploring visual storytelling through digital illustration and premium garment design. 
+            Based in Waco, Texas.
+        </p>
+    </section>
+
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="artwork1.jpg" alt="Digital Illustration">
+            <div class="item-label">concept art</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="artwork2.jpg" alt="Norse Myth Art">
+            <div class="item-label">mythology series</div>
+        </div>
+
+        <a href="modern-flower.html" class="gallery-item" style="border: 1px solid var(--text-color);">
+            <img src="modern-flower-thumb.jpg" alt="Modern Flower T-Shirt">
+            <div class="item-label" style="color: var(--accent-color);">Featured Drop: Modern Flower</div>
+        </a>
+    </div>
+
+    <div class="btn-container">
+        <a href="modern-flower.html" class="btn-main">View Collection</a>
+    </div>
+
+    <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05); font-family: sans-serif;">
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1rem; opacity: 0.6;">
+            Connect with Scrounce
+        </p>
+        
+        <p style="margin: 0 0 1.5rem 0; line-height: 2.5;">
+            <a href="https://www.instagram.com/scrounce" target="_blank" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">INSTAGRAM</a>
+            <a href="https://www.tiktok.com/@scrounce" target="_blank" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">TIKTOK</a>
+            <a href="https://www.facebook.com/share/1D9MvsAj3n/" target="_blank" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">FACEBOOK</a>
+            <a href="mailto:info@scrounce.com" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">EMAIL</a>
+        </p>
+
+        <p style="font-size: 0.75rem; opacity: 0.5; letter-spacing: 1px; margin-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; text-transform: uppercase;">
+            &copy; 2026 SCROUNCE | WACO, TEXAS | Original Art & Apparel by H Lewis
+        </p>
+    </footer>
+
+</body>
+</html>
