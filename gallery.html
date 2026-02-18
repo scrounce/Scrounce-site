@@ -18,7 +18,6 @@
             color: var(--text-color);
         }
 
-        /* Header Matches Index */
         header {
             padding: 2rem;
             display: flex;
@@ -60,12 +59,11 @@
             margin: 0;
         }
 
-        /* 8-Image Grid */
         .art-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns desktop */
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for 6 images looks balanced */
             gap: 20px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto 8rem;
             padding: 0 2rem;
         }
@@ -75,7 +73,7 @@
             padding: 5px;
             border-radius: 2px;
             transition: transform 0.3s ease;
-            cursor: pointer;
+            cursor: zoom-in;
         }
 
         .art-card:hover {
@@ -89,14 +87,55 @@
             border-radius: 1px;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 1024px) {
-            .art-grid { grid-template-columns: repeat(2, 1fr); } /* 2 columns tablet */
+        /* Lightbox Styling with Fade Effect */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        @media (max-width: 600px) {
+        #lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 90%;
+        }
+
+        #lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        #lightbox-title {
+            color: #fff;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1024px) { .art-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { 
             header { flex-direction: column; gap: 15px; }
-            .art-grid { grid-template-columns: 1fr; } /* 1 column mobile */
+            .art-grid { grid-template-columns: 1fr; }
             h1 { font-size: 2.2rem; }
         }
     </style>
@@ -122,11 +161,39 @@
         <div class="art-card"><img src="Untitled_Artwork 8 (1)_page-0001.jpg" alt="The Most Beautiful Woman"></div>
     </div>
 
+    <div id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Expanded Art">
+            <div id="lightbox-title"></div>
+        </div>
+    </div>
+
     <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05); font-family: sans-serif;">
         <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; opacity: 0.4;">
             &copy; 2026 SCROUNCE | ALL RIGHTS RESERVED
         </p>
     </footer>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const images = document.querySelectorAll('.art-card img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxTitle.textContent = img.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Stop scrolling when open
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    </script>
 
 </body>
 </html>
