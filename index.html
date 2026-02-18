@@ -3,206 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MODERN FLOWER | SCROUNCE</title>
+    <title>SCROUNCE | Digital Artist & Designer</title>
     <style>
         :root {
             --bg-color: #f4f1ea; 
             --text-color: #1a1a1a;
-            --accent-color: #5b6e58; 
-            --price-tag: #8b5e3c;
         }
 
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            overflow-x: hidden;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
         }
 
-        header {
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem;
         }
 
-        .logo {
-            font-size: 1.4rem;
-            letter-spacing: 0.4rem;
+        .logo-large {
+            font-size: 4rem;
             font-weight: 800;
+            letter-spacing: 0.8rem;
             text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
 
-        .signature {
+        .subtitle {
             font-style: italic;
             opacity: 0.6;
-            font-size: 0.9rem;
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 90vh;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .product-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-        }
-
-        .video-wrapper {
-            width: 100%;
-            max-width: 450px;
-            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.12));
-            border-radius: 12px;
-            overflow: hidden;
-            background: #fff;
-        }
-
-        .product-info {
-            padding: 8rem 4rem;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 300;
-            letter-spacing: -2px;
-            text-transform: lowercase;
-        }
-
-        .price {
-            font-size: 1.8rem;
-            color: var(--price-tag);
-            margin-bottom: 2.5rem;
-            display: block;
-            font-weight: 500;
-        }
-
-        .description {
-            max-width: 480px;
-            margin-bottom: 3rem;
-            font-size: 1.15rem;
-            color: #444;
-            line-height: 1.8;
-        }
-
-        .details-list {
-            list-style: none;
-            padding: 0;
+            font-size: 1.1rem;
             margin-bottom: 4rem;
         }
 
-        .details-list li {
-            margin-bottom: 0.8rem;
-            font-size: 0.85rem;
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .item-label {
             text-transform: uppercase;
-            letter-spacing: 0.15rem;
-            color: #777;
-            display: flex;
-            align-items: center;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: bold;
         }
 
-        .details-list li::before {
-            content: "•";
-            margin-right: 10px;
-            color: var(--accent-color);
-        }
-
-        footer {
-            padding: 4rem 2rem;
-            text-align: center;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            opacity: 0.4;
-        }
-
-        @media (max-width: 1024px) {
-            main { grid-template-columns: 1fr; }
-            .product-visual { height: auto; position: relative; padding: 4rem 2rem; }
-            .product-info { padding: 2rem; text-align: center; }
-            .description { margin: 0 auto 3rem; }
-            .details-list { display: inline-block; text-align: left; }
-            .paypal-wrapper { align-items: center !important; }
+        .btn-main {
+            display: inline-block;
+            padding: 20px 40px;
+            background: var(--text-color);
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 8rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">SCROUNCE</div>
-        <div class="signature">Digital Art & Apparel by H Lewis</div>
-    </header>
+    <section class="hero">
+        <div class="logo-large">SCROUNCE</div>
+        <div class="subtitle">Digital Illustration & Apparel Design</div>
+    </section>
 
-    <main>
-        <section class="product-visual">
-            <div class="video-wrapper">
-                <video autoplay loop muted playsinline width="100%">
-                    <source src="Untitled_Artwork.MP4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </section>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="artwork1.jpg" alt="Scrounce Digital Art">
+            <div class="item-label">Illustration Series 01</div>
+        </div>
 
-        <section class="product-info">
-            <h1>modern flower</h1>
-            <span class="price">$45.00</span>
+        <div class="gallery-item">
+            <img src="artwork2.jpg" alt="Scrounce Digital Art">
+            <div class="item-label">Norse Concepts</div>
+        </div>
 
-            <p class="description">
-                Limited Artist Drop. Premium Comfort Colors 1717 blanks. 
-                Original digital art by H Lewis.
-            </p>
+        <a href="modern-flower.html" class="gallery-item" style="border: 2px solid var(--text-color);">
+            <img src="modern-flower-thumb.jpg" alt="Modern Flower Tee">
+            <div class="item-label" style="color: #8b5e3c;">Shop: Modern Flower</div>
+        </a>
+    </div>
 
-            <ul class="details-list">
-                <li>Garment Dyed Fabric</li>
-                <li>Relaxed, Vintage Fit</li>
-                <li>Ships from Waco, TX</li>
-            </ul>
-
-            <div class="paypal-wrapper" style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 2rem; width: 100%;">
-                <div id="paypal-container-HNTHUGPSRVTAC" style="width: 100%; max-width: 300px;"></div>
-                <script src="https://www.paypal.com/sdk/js?client-id=BAAUl0uEMkJg4B9sxMvMW5BIGNX4r5CHOujzpfiaYs_XPqtNQXKRxOzGARHlfwzNBJ8mPCfmM_n9mA-NEE&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-                <script>
-                  paypal.HostedButtons({
-                    hostedButtonId: "HNTHUGPSRVTAC",
-                  }).render("#paypal-container-HNTHUGPSRVTAC")
-                </script>
-            </div>
-
-            <div style="margin-top: 5rem; opacity: 0.4; font-size: 0.75rem; line-height: 2;">
-                SHIPS FROM TEXAS<br>
-                ORDERS SHIPPED EVERY 2 WEEKS<br>
-            </div>
-        </section>
-    </main>
+    <a href="modern-flower.html" class="btn-main">Enter the Shop</a>
 
     <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05);">
-        <div style="margin-bottom: 2rem;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1.5rem; opacity: 0.6;">Connect with Scrounce</p>
-            
-            <div class="social-links" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 2rem;">
-                <a href="https://www.instagram.com/scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">INSTAGRAM</a>
-                <a href="https://www.tiktok.com/@scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">TIKTOK</a>
-                <a href="https://www.facebook.com/share/1D9MvsAj3n/" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">FACEBOOK</a>
-                <a href="mailto:info@scrounce.com" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px;">EMAIL</a>
-            </div>
-        </div>
-
-        <div style="font-size: 0.7rem; letter-spacing: 1px; opacity: 0.4;">
-            © 2026 SCROUNCE WACO, TX <br> 
-            Original Art & Apparel by H Lewis
-            
-        </div>
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1rem; opacity: 0.6;">Connect</p>
+        <p style="margin-bottom: 2rem;">
+            <a href="https://www.instagram.com/scrounce" style="margin: 0 10px; text-decoration: none; color: #1a1a1a; font-weight: bold;">INSTAGRAM</a>
+            <a href="mailto:info@scrounce.com" style="margin: 0 10px; text-decoration: none; color: #1a1a1a; font-weight: bold;">EMAIL</a>
+        </p>
+        <p style="font-size: 0.75rem; opacity: 0.5;">&copy; 2026 SCROUNCE | WACO, TX</p>
     </footer>
 
 </body>
