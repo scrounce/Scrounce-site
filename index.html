@@ -34,9 +34,9 @@
             font-size: 1.4rem;
             font-weight: 800;
             text-transform: uppercase;
-            /* The Centering Fix */
+            /* Perfect Centering Fix */
             letter-spacing: 0.4rem;
-            text-indent: 0.2rem; 
+            text-indent: 0.4rem; 
             text-align: center;
         }
 
@@ -76,14 +76,14 @@
             border-radius: 2px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            color: inherit;
+            color: #fff; /* Ensures text in black boxes is visible */
             display: block;
             box-shadow: 0 3px 5px rgba(0,0,0,0.05);
         }
 
         .gallery-item:hover {
             transform: translateY(-10px);
-            box-shadow: 10px 5px rgba(0,0,0,0.1);
+            box-shadow: 10px 10px rgba(0,0,0,0.1);
         }
 
         .gallery-item img {
@@ -98,9 +98,10 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 2px;
-            color:ffff#;
-            font-weight: italics;
-            padding-bottom: 10px;
+            color: #fff;
+            font-style: italic;
+            padding: 10px 0;
+            text-align: center;
         }
 
         .btn-container {
@@ -161,16 +162,17 @@
     <div class="gallery-grid">
         <div class="gallery-item">
             <img src="Untitled (4).png" alt="BE THE COLOR">
-            <div class="item-label"></div>
+            <div class="item-label">BE THE COLOR</div>
         </div>
 
-        <a href="modern-flower.html" class="gallery-item" style="border: 1px solid var(--text-color);">
+        <a href="modern-flower.html" class="gallery-item">
             <img src="Untitled (15).png" alt="Modern Flower T-Shirt">
-            <div class="item-label" style="color: var(--accent-color);">Featured Drop: Modern Flower</div>
+            <div class="item-label" style="color: var(--accent-color);">SHOP: MODERN FLOWER</div>
         </a>
+
         <div class="gallery-item">
             <img src="Untitled (14)~2.png" alt="Norse Myth Art">
-            <div class="item-label">GALLERY</div>
+            <div class="item-label">THE GALLERY</div>
         </div>
     </div>
 
