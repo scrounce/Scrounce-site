@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKS | SCROUNCE</title>
+    <link rel="icon" type="image/png" href="s-browser.png">
+    <style>
+        :root {
+            --bg-color: #f4f1ea; 
+            --text-color: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            padding: 2rem 1rem;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            text-indent: 0.5rem;
+            text-decoration: none;
+            color: inherit;
+            margin-top: 2rem;
+        }
+
+        .subtitle {
+            font-style: italic;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            margin: 1rem 0 3rem;
+        }
+
+        .link-stack {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-btn {
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 1.2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            border-radius: 2px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .link-btn:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+
+        .section-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 1.5rem 0 0.5rem;
+            opacity: 0.4;
+            font-weight: bold;
+        }
+
+        .link-btn.outline {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 4rem 0 2rem;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            opacity: 0.4;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="logo">SCROUNCE</a>
+    <p class="subtitle">Digital Art & Apparel by H Lewis</p>
+
+    <div class="link-stack">
+        <a href="modern-flower.html" class="link-btn">Shop: Modern Flower Drop</a>
+        
+        <a href="gallery.html" class="link-btn">View Full Gallery</a>
+        
+        <div class="section-label">Connect</div>
+
+        <a href="https://facebook.com/scrounce" class="link-btn outline" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/scrounce" class="link-btn outline" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@scrounce" class="link-btn outline" target="_blank">TikTok</a>
+        
+        <a href="https://open.spotify.com/artist/42U8k7QSuXbh62Hrg9FKES?si=HIyQtTeNQAKUAaZNIEVFkw" class="link-btn outline" target="_blank">Listen: Unseen Heroes EP</a>
+    </div>
+
+    <footer>
+        &copy; 2026 SCROUNCE | WACO, TEXAS
+    </footer>
+
+</body>
+</html>
