@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="icon" type="image/png" href="s-browser.png">
-<link rel="apple-touch-icon" href="s-browser.png">
+    <link rel="apple-touch-icon" href="s-browser.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCROUNCE | Digital Art & Apparel</title>
@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* Centered Header with Mobile Support */
         header {
             padding: 2rem;
             display: flex;
@@ -32,32 +31,10 @@
             background: var(--bg-color);
         }
 
-        .banner-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: #000; /* Bold black to match Scrounce */
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    text-decoration: none;
-    border: 1px solid #000;
-    transition: all 0.3s ease;
-}
-
-.banner-btn:hover {
-    background-color: transparent;
-    color: #000;
-}
-        
-
         .logo {
             font-size: 1.4rem;
             font-weight: 800;
             text-transform: uppercase;
-            /* Perfect Centering Fix */
             letter-spacing: 0.4rem;
             text-indent: 0.4rem; 
             text-align: center;
@@ -69,7 +46,6 @@
             font-size: 0.9rem;
         }
 
-        /* Hero / Gallery Section */
         .hero {
             padding: 6rem 2rem 4rem;
             text-align: center;
@@ -83,7 +59,6 @@
             text-transform: lowercase;
         }
 
-        /* Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -99,9 +74,11 @@
             border-radius: 2px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            color: #fff; /* Ensures text in black boxes is visible */
-            display: block;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
             box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+            position: relative;
         }
 
         .gallery-item:hover {
@@ -114,7 +91,6 @@
             height: auto;
             border-radius: 1px;
             display: block;
-            margin-bottom: .5rem;
         }
 
         .item-label {
@@ -123,47 +99,42 @@
             letter-spacing: 2px;
             color: #fff;
             font-style: italic;
-            padding: 10px 0;
+            padding: 15px 0;
             text-align: center;
         }
 
-        .btn-container {
-            margin-bottom: 8rem;
-            text-align: center;
-        }
-
-        .btn-main {
-            display: inline-block;
-            padding: 18px 40px;
-            background: var(--text-color);
-            color: #fff;
-            text-decoration: none;
-            letter-spacing: 2px;
-            font-weight: bold;
-            font-size: 0.85rem;
+        /* Banner Button styling for the "About" card */
+        .banner-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000;
             text-transform: uppercase;
-            transition: opacity 0.3s;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            text-decoration: none;
+            border: 1px solid #fff;
+            transition: all 0.3s ease;
+            text-align: center;
         }
 
-        .btn-main:hover {
-            opacity: 0.8;
+        .banner-btn:hover {
+            background-color: transparent;
+            color: #fff;
         }
 
-        /* Responsive Mobile Tweak */
+        footer {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
         @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            .logo {
-                letter-spacing: 0.3rem;
-                text-indent: 0.3rem;
-                font-size: 1.2rem;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -177,45 +148,39 @@
     <section class="hero">
         <h1>digital gallery</h1>
         <p style="opacity: 0.6; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
-            Exploring visual storytelling through digital illustration and premium garment design. </br>
+            Exploring visual storytelling through digital illustration and premium garment design. <br>
             Based in Waco, Texas.
         </p>
     </section>
 
     <div class="gallery-grid">
+        
         <div class="gallery-item">
-            <div class="banner-content">
-   
-                <a href="about.html" class="banner-btn">THE STORY</a>
-            
             <img src="be-the-color.png" alt="BE THE COLOR">
+            <a href="about.html" class="banner-btn">THE STORY</a>
             <div class="item-label">BE THE COLOR</div>
-            </div>
-                <a href="modern-flower.html" class="gallery-item">
+        </div>
+
+        <a href="modern-flower.html" class="gallery-item">
             <img src="modern-flower-shop.png" alt="Modern Flower T-Shirt">
             <div class="item-label">SHOP: MODERN FLOWER</div>
-        </div>
         </a>
-         <a href="gallery.html"
-         class="gallery-item">
+
+        <a href="gallery.html" class="gallery-item">
             <img src="scrounce-gallery.png" alt="Norse Myth Art">
             <div class="item-label">THE GALLERY</div>
-         </a>
+        </a>
+
     </div>
 
-
-    <footer style="padding: 6rem 2rem; text-align: center; background: #fff; border-top: 1px solid rgba(0,0,0,0.05); font-family: sans-serif;">
-        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1rem; opacity: 0.6;">
-            Connect with Scrounce
-        </p>
-        
+    <footer>
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1rem; opacity: 0.6;">Connect with Scrounce</p>
         <p style="margin: 0 0 1.5rem 0; line-height: 2.5;">
-            <a href="https://www.instagram.com/scrounce" target="_blank" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">INSTAGRAM</a>
-            <a href="https://www.tiktok.com/@scrounce" target="_blank" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">TIKTOK</a>
-            <a href="https://www.facebook.com/scrounce/" target="_blank" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">FACEBOOK</a>
-            <a href="mailto:info@scrounce.com" style="display: inline-block; text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">EMAIL</a>
+            <a href="https://www.instagram.com/scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">INSTAGRAM</a>
+            <a href="https://www.tiktok.com/@scrounce" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">TIKTOK</a>
+            <a href="https://www.facebook.com/scrounce/" target="_blank" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">FACEBOOK</a>
+            <a href="mailto:info@scrounce.com" style="text-decoration: none; color: #1a1a1a; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin: 0 15px;">EMAIL</a>
         </p>
-
         <p style="font-size: 0.75rem; opacity: 0.5; letter-spacing: 1px; margin-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; text-transform: uppercase;">
             &copy; 2026 SCROUNCE | WACO, TEXAS | Original Art & Apparel by H Lewis
         </p>
