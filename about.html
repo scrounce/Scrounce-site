@@ -50,7 +50,6 @@
             border-bottom: 1px solid var(--text-color);
         }
 
-        /* Split Screen Layout */
         .about-container {
             display: flex;
             min-height: 100vh;
@@ -60,7 +59,7 @@
         .about-image {
             flex: 1;
             background: url('modern-flower.jpg') center/cover no-repeat;
-            min-height: 50vh; /* For mobile stacking */
+            min-height: 50vh;
         }
 
         .about-content {
@@ -68,7 +67,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 8rem 4rem 4rem;
+            padding: 10rem 4rem 6rem;
             max-width: 600px;
         }
 
@@ -86,26 +85,56 @@
             opacity: 0.9;
         }
 
-        .signature {
-            margin-top: 2rem;
-            font-family: serif;
-            font-style: italic;
-            font-size: 1.2rem;
+        blockquote {
+            border-left: 2px solid #000; 
+            padding-left: 20px; 
+            margin: 2.5rem 0; 
+            font-style: italic; 
+            opacity: 0.8; 
+            font-size: 1.1rem;
         }
 
-        /* Responsive */
+        .signature {
+            margin: 2rem 0 4rem;
+            font-family: serif;
+            font-style: italic;
+            font-size: 1.4rem;
+        }
+
+        /* Gallery Preview Styling */
+        .preview-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px;
+        }
+
+        .preview-grid img {
+            width: 100%; 
+            filter: grayscale(100%); 
+            transition: filter 0.5s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .preview-grid img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            opacity: 0.4;
+            background: #fff;
+        }
+
         @media (max-width: 900px) {
-            .about-container {
-                flex-direction: column;
-            }
-            .about-image {
-                order: 1;
-                height: 60vh;
-            }
-            .about-content {
-                order: 2;
-                padding: 4rem 2rem;
-            }
+            .about-container { flex-direction: column; }
+            .about-image { order: 1; height: 60vh; }
+            .about-content { order: 2; padding: 6rem 2rem; }
+            header { position: relative; background: var(--bg-color); }
+            .preview-grid img { filter: grayscale(0%); } /* Always color on mobile */
         }
     </style>
 </head>
@@ -117,28 +146,43 @@
     </header>
 
     <main class="about-container">
-   <div class="about-content">
-    <h1>Be The Color</h1>
-    
-    <p class="bio-text">
-        Everything I do, I do for my family and the people I love. I want to bring something into this world that means as much to me as it does to you. 
-    </p>
+        <div class="about-image"></div>
 
-    <blockquote style="border-left: 2px solid #000; padding-left: 20px; margin: 2rem 0; font-style: italic; opacity: 0.8;">
-        "The birth of my son changed my entire way of thinking. Instead of focusing on the negative, I have finally found a way and a reason to live."
-    </blockquote>
+        <div class="about-content">
+            <h1>be the color</h1>
+            
+            <p class="bio-text">
+                Everything I do, I do for my family and the people I love. I want to bring something into this world that means as much to me as it does to you. 
+            </p>
 
-    <p class="bio-text">
-        The modern world is full of division and hate. The world around us has turned grey and void of color. While the entire world falls apart, we can find a way. We can find a way to bring it together. 
-    </p>
+            <blockquote class="manifesto-quote">
+                "The birth of my son changed my entire way of thinking. Instead of focusing on the negative, I have finally found a way and a reason to live."
+            </blockquote>
 
-    <p class="bio-text" style="font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-top: 2rem;">
-        We can find a way to "Be The Color".
-    </p>
+            <p class="bio-text">
+                The modern world is full of division and hate. The world around us has turned grey and void of color. While the entire world falls apart, we can find a way. We can find a way to bring it together. 
+            </p>
 
-    <p class="signature">— H Lewis</p>
+            <p class="bio-text" style="font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-top: 1rem;">
+                We can find a way to "Be The Color".
+            </p>
+
+            <p class="signature">— H Lewis</p>
+
+            <div class="about-gallery-preview">
+                <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; opacity: 0.4; margin-bottom: 1.5rem;">Featured Works</p>
+                <div class="preview-grid">
+                    <a href="gallery.html"><img src="thor-fishing-trip.jpg" alt="Thor Fishing Trip"></a>
+                    <a href="gallery.html"><img src="portrait-spinal-fusion.jpg" alt="Spinal Fusion Portrait"></a>
+                </div>
+                <a href="gallery.html" class="nav-link" style="display: inline-block; margin-top: 2rem;">Explore Full Gallery</a>
+            </div>
         </div>
     </main>
+
+    <footer>
+        &copy; 2026 SCROUNCE | WACO, TEXAS
+    </footer>
 
 </body>
 </html>
