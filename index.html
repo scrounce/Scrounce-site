@@ -32,6 +32,27 @@
             background: var(--bg-color);
         }
 
+        .banner-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #000; /* Bold black to match Scrounce */
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+    background-color: transparent;
+    color: #000;
+}
+        
+
         .logo {
             font-size: 1.4rem;
             font-weight: 800;
@@ -163,6 +184,10 @@
 
     <div class="gallery-grid">
         <div class="gallery-item">
+            <div class="banner-content">
+    <a href="about.html" class="banner-btn">THE STORY</a>
+            </div>
+            
             <img src="be-the-color.png" alt="BE THE COLOR">
             <div class="item-label">BE THE COLOR</div>
         </div>
